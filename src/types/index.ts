@@ -14,7 +14,13 @@ export const quoteFormSchema = z.object({
   phone: z
     .string()
     .min(10, "Please enter a valid 10-digit mobile number")
-    .regex(/^[6-9]\d{9}$/, "Please enter a valid Indian mobile number"),
+    .refine(
+      (val) => {
+        const digits = val.replace(/\D/g, "").slice(-10);
+        return digits.length === 10 && /^[6-9]\d{9}$/.test(digits);
+      },
+      { message: "Please enter a valid 10-digit Indian mobile number" }
+    ),
   pickupLocation: z.string().min(2, "Pickup location is required"),
   destination: z.string().min(2, "Destination is required"),
   service: z.enum([

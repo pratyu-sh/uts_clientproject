@@ -50,7 +50,7 @@ const jsonLd = {
       name: "Uttarakhand Tempo Services",
       alternateName: "UTS Packers & Movers",
       url: "https://uttarakhandtemposervices.in",
-      telephone: "+919876543210",
+      telephone: "+917906696981",
       priceRange: "₹₹",
       image: "https://uttarakhandtemposervices.in/logo.png",
       address: {

@@ -128,7 +128,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white font-semibold text-emerald-400"
                 >
-                  WhatsApp: +91 94120 54321
+                  WhatsApp: {siteConfig.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">

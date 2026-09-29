@@ -11,9 +11,9 @@ export const siteConfig = {
   since: "2010",
   gstVerified: true,
   gstNumber: "05AAACU1234F1Z5", // Dehradun Uttarakhand State GST format
-  phone: "+91 94120 54321",
-  phoneRaw: "+919412054321",
-  whatsappNumber: "919412054321",
+  phone: "+91 79066 96981",
+  phoneRaw: "+917906696981",
+  whatsappNumber: "917906696981",
   email: "support@uttarakhandtemposervices.in",
   address: "Plot 14, Transport Nagar, Saharanpur Road, Dehradun, Uttarakhand 248001",
   landmark: "Near ISBT & Transport Nagar Hub",
@@ -439,7 +439,7 @@ export const faqData: FaqItem[] = [
   {
     question: "How can I book or get a quotation?",
     answer:
-      "You can submit our quick quote form on this page, message us directly on WhatsApp with your pickup and destination, or call our direct phone number (+91 94120 54321). We respond within minutes.",
+      "You can submit our quick quote form on this page, message us directly on WhatsApp with your pickup and destination, or call our direct phone number (+91 79066 96981). We respond within minutes.",
   },
   {
     question: "What items can or cannot be transported?",

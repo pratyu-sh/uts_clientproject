@@ -90,7 +90,7 @@ export function MinimalFooter() {
                   rel="noopener noreferrer"
                   className="hover:text-[#FF4D24] font-medium text-[#121316]"
                 >
-                  WhatsApp: +91 94120 54321
+                  WhatsApp: {siteConfig.phone}
                 </a>
               </p>
             </div>
