@@ -6,7 +6,8 @@ interface QuotePayload {
   name?: string;
   phone: string;
   pickupLocation: string;
-  destination: string;
+  destination?: string;
+  dropLocation?: string;
   service: ServiceType;
   movingDate?: string;
   message?: string;
@@ -65,7 +66,8 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!body.pickupLocation || !body.destination) {
+    const destination = body.destination?.trim() || body.dropLocation?.trim();
+    if (!body.pickupLocation?.trim() || !destination) {
       return NextResponse.json(
         { success: false, error: "Pickup location and destination are required." },
         { status: 400 }
@@ -84,7 +86,7 @@ export async function POST(request: Request) {
       `• *Phone:* +91 ${cleanPhone}`,
       `• *Service:* ${serviceKey.replace("-", " ").toUpperCase()}`,
       `• *Pickup:* ${body.pickupLocation}`,
-      `• *Drop:* ${body.destination}`,
+      `• *Drop:* ${destination}`,
       body.movingDate ? `• *Moving Date:* ${body.movingDate}` : null,
       `• *Recommended Vehicle:* ${estimate.vehicle}`,
       `• *Estimated Range:* ${estimate.priceRange}`,
@@ -107,7 +109,7 @@ export async function POST(request: Request) {
       phone: cleanPhone,
       details: {
         pickupLocation: body.pickupLocation,
-        destination: body.destination,
+        destination,
         service: serviceKey,
         movingDate: body.movingDate || "Flexible",
         name: body.name || "",
