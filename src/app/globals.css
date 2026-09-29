@@ -1,26 +1,137 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@theme {
+  --color-uts-orange: #FF4D24;
+  --color-uts-orange-hover: #E23A12;
+  --color-uts-orange-light: #FFF1EE;
+  
+  --color-uts-green: #14552D;
+  --color-uts-green-hover: #0F4022;
+  --color-uts-green-light: #EBF7EE;
+  
+  --color-uts-blue: #064A91;
+  --color-uts-blue-hover: #053B74;
+  --color-uts-blue-light: #EEF5FC;
+
+  --color-ink: #121316;
+  --color-text-secondary: #5E6470;
+  --color-text-muted: #8E95A3;
+  
+  --color-bg-light: #F4F5F6;
+  --color-surface: #FFFFFF;
+  --color-border-light: #E8EAED;
+  --color-border-strong: #CBD1CC;
+
+  --color-success: #16803C;
+  --color-warning: #FF4D24;
+  --color-error: #C62828;
+  --color-info: #064A91;
+
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-3xl: 32px;
+  --radius-pill: 9999px;
+  
+  --shadow-uts-sm: 0 4px 12px rgba(18, 19, 22, 0.04);
+  --shadow-uts-md: 0 12px 30px rgba(18, 19, 22, 0.07);
+  --shadow-uts-lg: 0 24px 60px rgba(18, 19, 22, 0.10);
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4F5F6;
+  --foreground: #121316;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html.lenis {
+  scroll-behavior: auto !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis body {
+  height: auto;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
+
+/* Reference design typography & pill styles */
+.editorial-display {
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.editorial-h2 {
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  background-color: #F0F2F5;
+  color: #5E6470;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Custom interactive card styling per reference */
+.uts-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8EAED;
+  border-radius: 24px;
+  box-shadow: 0 4px 14px rgba(18, 19, 22, 0.03);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.uts-card:hover {
+  transform: translateY(-4px);
+  border-color: #FF4D24;
+  box-shadow: 0 14px 34px rgba(255, 77, 36, 0.09);
+}
+
+/* Custom form inputs */
+.uts-input {
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid #E8EAED;
+  background-color: #FFFFFF;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #121316;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.uts-input:focus {
+  outline: none;
+  border-color: #FF4D24;
+  box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.16);
+}
+
+/* Continuous brand marquee keyframes */
+@keyframes uts-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
